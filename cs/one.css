@@ -71,9 +71,26 @@ button {
   box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
 }
 nav {
-  background-color: #222;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.4);
   padding: 15px;
-  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00ff88;
 }
 
 nav a {
@@ -165,3 +182,36 @@ h2 {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
+body {
+  margin: 0;
+  padding-top: 20px;
+}
+/* Skills Section */
+#skills {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.skill {
+  width: 60%;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.progress {
+  background: #333;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 20px;
+  width: 0;
+  background: #00ff88;
+  transition: width 1.5s ease;
+}
+
+/* Skill Levels */
+.progress-bar.html { width: 90%; }
+.progress-bar.css { width: 80%; }
+.progress-bar.js { width: 65%; }

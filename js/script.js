@@ -35,3 +35,20 @@ function revealOnScroll() {
 }
 
 window.addEventListener("scroll", revealOnScroll);
+// Skill animation on scroll
+const skillSection = document.querySelector("#skills");
+
+window.addEventListener("scroll", () => {
+  const sectionTop = skillSection.getBoundingClientRect().top;
+  const triggerPoint = window.innerHeight * 0.8;
+
+  if (sectionTop < triggerPoint) {
+    document.querySelectorAll(".progress-bar").forEach(bar => {
+      bar.style.width = bar.classList.contains("html")
+        ? "90%"
+        : bar.classList.contains("css")
+        ? "80%"
+        : "65%";
+    });
+  }
+});
